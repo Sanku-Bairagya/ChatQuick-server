@@ -8,25 +8,25 @@ import { acceptrequestValidator, loginValidator, registerValidator, sendRequestV
 
 const app = express.Router();
 
-app.post("/new",singleAvatar, registerValidator() ,validateHandler,newUser);
-app.post("/login",loginValidator(),validateHandler,login);
+app.post("new",singleAvatar, registerValidator() ,validateHandler,newUser);
+app.post("login",loginValidator(),validateHandler,login);
 
 
 //after here user must be logged in to access the routes
 
 app.use(isAuthenticated)
-app.get("/me",getMyProfile)
-app.get("/logout",logOut)
+app.get("me",getMyProfile)
+app.get("logout",logOut)
 
-app.get("/search",search);
+app.get("search",search);
 
-app.put("/sendrequest",sendRequestValidator(),validateHandler,sendFrindRequest)
+app.put("sendrequest",sendRequestValidator(),validateHandler,sendFrindRequest)
 
-app.put("/acceptrequest",acceptrequestValidator(),validateHandler,acceptFrindRequest)
+app.put("acceptrequest",acceptrequestValidator(),validateHandler,acceptFrindRequest)
 
-app.get("/notification",getAllNotification);
+app.get("notification",getAllNotification);
 
-app.get("/friends",getMyFriends);
+app.get("friends",getMyFriends);
 
 
 export default app;
