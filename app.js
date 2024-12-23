@@ -49,9 +49,9 @@ const port  = process.env.PORT || 3000;
 const envMode = process.env.NODE_ENV.trim() || "PRODUCTION";
 const userSocketIDs = new Map();
 
-app.use("api/v1/user",userRoute);
-app.use("api/v1/chat",chatRoute);
-app.use("api/v1/admin",adminRoutre)
+app.use("/api/v1/user",userRoute);
+app.use("/api/v1/chat",chatRoute);
+app.use("/api/v1/admin",adminRoutre)
 
 
 
