@@ -43,7 +43,7 @@ cloudinary.config({
     api_key:process.env.CLOUDINARY_API_KEY,
     api_secret:process.env.CLOUDINARY_API_SECRET
 })
-
+console.log(process.env.CLIENT_URL)
 
 const port  = process.env.PORT || 3000;
 const envMode = process.env.NODE_ENV.trim() || "PRODUCTION";
@@ -59,6 +59,7 @@ app.get("/",(req,res)=>{
     res.send("Hello world !")
 
 })
+
 
 io.use((socket,next)=> {
    cookieParser()(
